@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import Journey from "./components/Journey";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Journey />
       </main>
     </>
   );
