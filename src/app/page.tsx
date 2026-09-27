@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Journey from "./components/Journey";
 import Navbar from "./components/Navbar";
+import Work from "./components/Work";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         <Hero />
         <Journey />
+        <Work />
       </main>
     </>
   );
