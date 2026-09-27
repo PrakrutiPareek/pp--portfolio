@@ -1,3 +1,4 @@
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -5,8 +6,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <h1>Prakruti Pareek</h1>
-        <p>Frontend Developer</p>
+        <Hero />
       </main>
     </>
   );
