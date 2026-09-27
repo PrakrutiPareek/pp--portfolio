@@ -21,7 +21,7 @@ const approaches = [
 
 export default function Approach() {
   return (
-    <section>
+    <section id="approach">
       <p>How I work</p>
 
       <h2>Thoughtful development, from idea to interface.</h2>
