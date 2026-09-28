@@ -11,7 +11,7 @@ export default function Journey() {
       </div>
 
       <div>
-        <h2 className="max-w-2xl text-3xl font-medium leading-tight tracking-[-0.03em] md:text-4xl">
+        <h2 className="max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] md:text-4xl">
           From science lab to code lab.
         </h2>
 

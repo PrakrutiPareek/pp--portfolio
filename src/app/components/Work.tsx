@@ -38,7 +38,7 @@ export default function Work() {
           My work
         </p>
 
-        <h2 className="mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.03em] md:text-4xl">
+        <h2 className="mt-4 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] md:text-4xl">
           Projects I’ve built and worked on.
         </h2>
       </div>
