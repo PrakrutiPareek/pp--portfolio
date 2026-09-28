@@ -1,6 +1,9 @@
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-(--border) py-4 md:py-8">
+    <section
+      id="contact"
+      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+    >
       <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:items-start">
         <div>
           <p className="font-mono text-md uppercase tracking-widest text-(--accent)">

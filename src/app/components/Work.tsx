@@ -52,7 +52,10 @@ export default function Work() {
   const [currentProject, setCurrentProject] = useState(0);
 
   return (
-    <section id="work" className="border-t border-(--border) py-4 md:py-8">
+    <section
+      id="work"
+      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+    >
       <p className="font-mono text-md uppercase tracking-widest text-(--accent)">
         My work
       </p>

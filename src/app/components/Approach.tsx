@@ -21,7 +21,10 @@ const approaches = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="border-t border-(--border) py-4 md:py-8">
+    <section
+      id="approach"
+      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+    >
       <div className="mb-12 md:mb-16">
         <p className="font-mono text-md uppercase tracking-widest text-(--accent)">
           My approach
