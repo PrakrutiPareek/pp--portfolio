@@ -1,28 +1,35 @@
+import {FaGithub} from "react-icons/fa";
+import {CiLinkedin} from "react-icons/ci";
+
 export default function Footer() {
   return (
-    <footer className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-(--border) px-6 py-8 md:flex-row md:items-center md:justify-between md:px-10 lg:px-12">
-      <p className="font-mono text-xs text-(--muted)">
-        © {new Date().getFullYear()} Prakruti Pareek
-      </p>
+    <footer className="mx-auto max-w-7xl border-t border-[var(--border)] px-6 py-8 md:px-10 lg:px-12">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <p className="font-mono text-xs text-[var(--muted)]">
+          © {new Date().getFullYear()} Prakruti Pareek
+        </p>
 
-      <div className="flex gap-6 font-mono text-xs uppercase tracking-widest">
-        <a
-          href="https://github.com/YOUR_USERNAME"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-(--muted) transition-colors hover:text-(--foreground)"
-        >
-          GitHub ↗
-        </a>
+        <div className="flex gap-5">
+          <a
+            href="https://github.com/PrakrutiPareek"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+          >
+            <FaGithub size={28} />
+          </a>
 
-        <a
-          href="https://www.linkedin.com/in/YOUR_USERNAME"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-(--muted) transition-colors hover:text-(--foreground)"
-        >
-          LinkedIn ↗
-        </a>
+          <a
+            href="https://www.linkedin.com/in/prakruti-pareek/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+          >
+            <CiLinkedin size={28} />
+          </a>
+        </div>
       </div>
     </footer>
   );
