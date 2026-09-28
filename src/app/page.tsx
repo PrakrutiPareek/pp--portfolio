@@ -13,8 +13,8 @@ export default function Home() {
 
       <main className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
         <Hero />
-        <Journey />
         <Work />
+        <Journey />
         <Approach />
         <Contact />
       </main>
