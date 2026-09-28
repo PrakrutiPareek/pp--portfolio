@@ -123,7 +123,7 @@ export default function Work() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 bg-[var(--accent)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-colors"
+                      className="group inline-flex items-center gap-3 bg-[var(--muted)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs text-[var(--background)] uppercase tracking-widest transition-colors"
                     >
                       <span>View live</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1">
