@@ -15,7 +15,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+            className="flex size-11 items-center justify-center text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
           >
             <FaGithub size={28} />
           </a>
@@ -25,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+            className="flex size-11 items-center justify-center text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
           >
             <CiLinkedin size={28} />
           </a>

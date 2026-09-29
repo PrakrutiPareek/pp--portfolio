@@ -2,7 +2,7 @@ export default function Journey() {
   return (
     <section
       id="journey"
-      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+      className="scroll-mt-24 border-t border-(--border) py-4 md:py-8"
     >
       <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
         <div>

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import {ArrowLeft, ArrowRight} from "lucide-react";
 import {useState} from "react";
 
 const projects = [
@@ -54,7 +55,7 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+      className="scroll-mt-24 border-t border-(--border) py-4 md:py-8"
     >
       <p className="font-mono text-md uppercase tracking-widest text-(--accent)">
         My work
@@ -69,21 +70,8 @@ export default function Work() {
           const project = projects[currentProject];
 
           return (
-            <article className="grid w-full grid-cols-[48px_minmax(0,1fr)_48px] items-center gap-x-3 gap-y-6 border-(--border) md:grid-cols-[64px_minmax(0,1fr)_64px] md:gap-x-5 lg:grid-cols-[64px_minmax(0,1.65fr)_minmax(280px,0.85fr)_64px]">
-              {currentProject > 0 ? (
-                <button
-                  type="button"
-                  aria-label="Previous project"
-                  onClick={() => setCurrentProject(currentProject - 1)}
-                  className="col-start-1 row-start-1 flex size-8 select-none items-center justify-center justify-self-center rounded-full border border-(--border) bg-(--background) font-serif text-[1.75rem] leading-none text-(--foreground) shadow-[0_5px_18px_rgba(36,35,31,0.10)] transition-colors hover:border-(--accent) hover:bg-(--accent) hover:text-(--background) focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent) md:size-10"
-                >
-                  <span aria-hidden="true">←</span>
-                </button>
-              ) : (
-                <span aria-hidden="true" className="col-start-1 row-start-1" />
-              )}
-
-              <div className="relative col-start-2 row-start-1 aspect-[1150/730] min-w-0 overflow-hidden">
+            <article className="grid w-full gap-y-6 border-(--border) lg:grid-cols-[minmax(0,1.65fr)_minmax(280px,0.85fr)] lg:items-center lg:gap-x-10">
+              <div className="relative aspect-[1150/730] min-w-0 overflow-hidden lg:col-start-1 lg:row-start-1">
                 <Image
                   src={project.image}
                   alt={`${project.title} project preview`}
@@ -93,17 +81,61 @@ export default function Work() {
                 />
               </div>
 
-              <div className="col-span-3 row-start-2 grid gap-6 md:grid-cols-[1fr_1.5fr] md:items-start lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:block lg:border-l lg:border-(--border) lg:pl-8">
-                <h3 className="flex items-center gap-2 text-2xl font-medium tracking-tight md:text-3xl lg:mb-5">
-                  <span className="font-mono text-sm text-(--accent)">
-                    {project.number}
-                  </span>
+              <div className="grid gap-6 md:grid-cols-[1fr_1.5fr] md:items-start lg:col-start-2 lg:row-start-1 lg:block lg:border-l lg:border-(--border) lg:pl-8">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 lg:mb-5">
+                  <h3 className="flex min-w-0 items-center gap-2 text-2xl font-medium tracking-tight md:text-3xl">
+                    <span className="font-mono text-md text-(--accent)">
+                      {project.number}
+                    </span>
 
-                  {project.title}
-                </h3>
+                    {project.title}
+                  </h3>
+
+                  <div className="ml-auto grid shrink-0 grid-cols-2 gap-1">
+                    {currentProject > 0 ? (
+                      <button
+                        type="button"
+                        aria-label="Previous project"
+                        onClick={() => setCurrentProject(currentProject - 1)}
+                        className="group inline-flex size-11 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+                      >
+                        <span className="flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground)">
+                          <ArrowLeft
+                            aria-hidden="true"
+                            size={16}
+                            strokeWidth={1.75}
+                            className="transition-transform duration-200 group-hover:-translate-x-0.5"
+                          />
+                        </span>
+                      </button>
+                    ) : (
+                      <span aria-hidden="true" className="size-11" />
+                    )}
+
+                    {currentProject < projects.length - 1 ? (
+                      <button
+                        type="button"
+                        aria-label="Next project"
+                        onClick={() => setCurrentProject(currentProject + 1)}
+                        className="group inline-flex size-11 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+                      >
+                        <span className="flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground)">
+                          <ArrowRight
+                            aria-hidden="true"
+                            size={16}
+                            strokeWidth={1.75}
+                            className="transition-transform duration-200 group-hover:translate-x-0.5"
+                          />
+                        </span>
+                      </button>
+                    ) : (
+                      <span aria-hidden="true" className="size-11" />
+                    )}
+                  </div>
+                </div>
 
                 <div>
-                  <p className="max-w-2xl leading-relaxed text-(--muted)">
+                  <p className="min-h-48 max-w-2xl leading-relaxed text-(--muted) sm:min-h-36 md:min-h-32 lg:min-h-48 xl:min-h-40">
                     {project.description}
                   </p>
 
@@ -123,7 +155,7 @@ export default function Work() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 bg-[var(--muted)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs text-[var(--background)] uppercase tracking-widest transition-colors"
+                      className="group inline-flex items-center gap-3 bg-[var(--muted)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs text-[var(--background)] uppercase tracking-widest transition-opacity hover:opacity-80"
                     >
                       <span>View live</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -145,22 +177,6 @@ export default function Work() {
                   </div>
                 </div>
               </div>
-
-              {currentProject < projects.length - 1 ? (
-                <button
-                  type="button"
-                  aria-label="Next project"
-                  onClick={() => setCurrentProject(currentProject + 1)}
-                  className="col-start-3 row-start-1 flex size-8 select-none items-center justify-center justify-self-center rounded-full border border-(--border) bg-(--background) font-serif text-[1.75rem] leading-none text-(--foreground) shadow-[0_5px_18px_rgba(36,35,31,0.10)] transition-colors hover:border-(--accent) hover:bg-(--accent) hover:text-(--background) focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent) md:size-10 lg:col-start-4"
-                >
-                  <span aria-hidden="true">→</span>
-                </button>
-              ) : (
-                <span
-                  aria-hidden="true"
-                  className="col-start-3 row-start-1 lg:col-start-4"
-                />
-              )}
             </article>
           );
         })()}

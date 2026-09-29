@@ -30,7 +30,7 @@ export default function Approach() {
   return (
     <section
       id="approach"
-      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+      className="scroll-mt-24 border-t border-(--border) py-4 md:py-8"
     >
       <p className="font-mono text-md uppercase tracking-widest text-(--accent)">
         My approach
