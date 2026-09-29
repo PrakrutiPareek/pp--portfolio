@@ -1,6 +1,8 @@
 "use client";
+
 import Link from "next/link";
 import {useState} from "react";
+import {Download} from "lucide-react";
 
 const navItems = [
   {label: "Work", href: "#work"},
@@ -23,7 +25,7 @@ export default function Navbar() {
           Prakruti Pareek
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -33,6 +35,19 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          <a
+            href="/Prakruti_Pareek_Resume.pdf"
+            download
+            className="group inline-flex items-center gap-3 border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-colors"
+          >
+            Resume
+            <Download
+              size={15}
+              strokeWidth={1.8}
+              className="transition-transform duration-200 group-hover:translate-y-0.5"
+            />
+          </a>
         </div>
 
         <button
@@ -54,6 +69,7 @@ export default function Navbar() {
           />
         </button>
       </nav>
+
       {menuOpen && (
         <div className="border-b border-(--border) py-6 md:hidden">
           <div className="flex flex-col gap-5">
@@ -67,6 +83,20 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+
+            <a
+              href="/Prakruti_Pareek_Resume.pdf"
+              download
+              onClick={() => setMenuOpen(false)}
+              className="group inline-flex items-center gap-3 self-start border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-colors"
+            >
+              Resume
+              <Download
+                size={15}
+                strokeWidth={1.8}
+                className="transition-transform duration-200 group-hover:translate-y-0.5"
+              />
+            </a>
           </div>
         </div>
       )}
