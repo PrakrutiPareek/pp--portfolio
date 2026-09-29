@@ -55,7 +55,7 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="scroll-mt-15 border-t border-(--border) py-4 md:py-8"
+      className="scroll-mt-24 border-t border-(--border) py-4 md:py-8"
     >
       <p className="font-mono text-md uppercase tracking-widest text-(--accent)">
         My work
@@ -97,17 +97,19 @@ export default function Work() {
                         type="button"
                         aria-label="Previous project"
                         onClick={() => setCurrentProject(currentProject - 1)}
-                        className="group inline-flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground) transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+                        className="group inline-flex size-11 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
                       >
-                        <ArrowLeft
-                          aria-hidden="true"
-                          size={16}
-                          strokeWidth={1.75}
-                          className="transition-transform duration-200 group-hover:-translate-x-0.5"
-                        />
+                        <span className="flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground)">
+                          <ArrowLeft
+                            aria-hidden="true"
+                            size={16}
+                            strokeWidth={1.75}
+                            className="transition-transform duration-200 group-hover:-translate-x-0.5"
+                          />
+                        </span>
                       </button>
                     ) : (
-                      <span aria-hidden="true" className="size-[30px]" />
+                      <span aria-hidden="true" className="size-11" />
                     )}
 
                     {currentProject < projects.length - 1 ? (
@@ -115,17 +117,19 @@ export default function Work() {
                         type="button"
                         aria-label="Next project"
                         onClick={() => setCurrentProject(currentProject + 1)}
-                        className="group inline-flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground) transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
+                        className="group inline-flex size-11 items-center justify-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)"
                       >
-                        <ArrowRight
-                          aria-hidden="true"
-                          size={16}
-                          strokeWidth={1.75}
-                          className="transition-transform duration-200 group-hover:translate-x-0.5"
-                        />
+                        <span className="flex size-[30px] items-center justify-center border border-(--accent) bg-(--border) text-(--foreground)">
+                          <ArrowRight
+                            aria-hidden="true"
+                            size={16}
+                            strokeWidth={1.75}
+                            className="transition-transform duration-200 group-hover:translate-x-0.5"
+                          />
+                        </span>
                       </button>
                     ) : (
-                      <span aria-hidden="true" className="size-[30px]" />
+                      <span aria-hidden="true" className="size-11" />
                     )}
                   </div>
                 </div>
@@ -151,7 +155,7 @@ export default function Work() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 bg-[var(--muted)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs text-[var(--background)] uppercase tracking-widest transition-colors"
+                      className="group inline-flex items-center gap-3 bg-[var(--muted)] border border-[var(--border)] px-5 py-2.5 font-mono text-xs text-[var(--background)] uppercase tracking-widest transition-opacity hover:opacity-80"
                     >
                       <span>View live</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1">

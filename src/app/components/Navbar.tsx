@@ -39,7 +39,7 @@ export default function Navbar() {
           <a
             href="/Prakruti_Pareek_Resume.pdf"
             download
-            className="group inline-flex items-center gap-3 border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-colors"
+            className="group inline-flex items-center gap-3 border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-opacity hover:opacity-80"
           >
             Resume
             <Download
@@ -54,6 +54,7 @@ export default function Navbar() {
           type="button"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex h-10 w-10 flex-col items-end justify-center gap-1.5 md:hidden"
         >
@@ -71,7 +72,10 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-b border-(--border) py-6 md:hidden">
+        <div
+          id="mobile-navigation"
+          className="border-b border-(--border) py-6 md:hidden"
+        >
           <div className="flex flex-col gap-5">
             {navItems.map((item) => (
               <Link
@@ -88,7 +92,7 @@ export default function Navbar() {
               href="/Prakruti_Pareek_Resume.pdf"
               download
               onClick={() => setMenuOpen(false)}
-              className="group inline-flex items-center gap-3 self-start border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-colors"
+              className="group inline-flex items-center gap-3 self-start border border-[var(--border)] bg-[var(--muted)] px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-[var(--background)] transition-opacity hover:opacity-80"
             >
               Resume
               <Download
